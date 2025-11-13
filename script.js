@@ -36,4 +36,14 @@ document.getElementById('giftBox').addEventListener('click', function () {
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 5000);
     }
+
+    // 🔊 Mainkan musik setelah halaman diklik (agar lolos aturan autoplay browser)
+    window.addEventListener("click", () => {
+        const bgMusic = document.getElementById("bgMusic");
+        if (bgMusic) {
+            bgMusic.play().catch(err => console.log("Autoplay diblokir:", err));
+    }
 });
+
+});
+
